@@ -220,3 +220,29 @@ footer { display: flex; justify-content: space-between; gap: 18px; padding: 24px
  .birthday-note__inner h2 { font-size: 3rem; line-height: 1; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; } }
+.birthday-music { margin-top: 48px; padding: clamp(18px,3vw,32px); border: 1px solid #ffffff40; border-radius: 24px; background: #ffffff08; scroll-margin-top: 20px; }
+.music-heading { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 24px; }
+.music-heading h3 { margin: 0; font: 800 clamp(1.8rem,3vw,2.8rem)/1.1 'Baloo 2'; }
+.music-heading .eyebrow { color: #ffb9dc; font-size: .875rem; }
+.music-heading a { color: #ffe85c; font-size: .875rem; white-space: nowrap; }
+.birthday-music iframe { display: block; border: 0; border-radius: 12px; }
+.music-note { font-size: .875rem; color: #e6d6e8; line-height: 1.5; margin-bottom: 0; }
+.gallery-hint { text-align: center; color: white; font-size: 1rem; }
+.photo-open { display: block; width: 100%; border: 0; padding: 0; background: transparent; cursor: zoom-in; }
+.action-shot .photo-open { height: 100%; }
+.photo-open:focus-visible { outline-offset: -5px; outline-color: #ffe85c; }
+.fave-card--squishy { touch-action: pan-y; user-select: none; }
+.fave-card--squishy img { transform-origin: center 75%; transition: transform .55s cubic-bezier(.2,1.8,.45,1); pointer-events: none; }
+.fave-card--squishy.is-squished img { transform: scale(1.2,.67) rotate(-6deg); transition: transform .18s ease-out; }
+.candy-piece { width: auto; height: auto; font-style: normal; font-size: 34px; }
+.photo-viewer { position: fixed; inset: 0; margin: 0; width: 100%; max-width: none; height: 100%; max-height: none; border: 0; padding: 64px 18px 20px; background: #140d20f7; color: white; overflow-y: auto; }
+.photo-viewer[open] { display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.photo-viewer figure { margin: 0; width: 100%; min-height: 0; text-align: center; }
+.photo-viewer figure img { display: block; margin: auto; max-width: 100%; width: auto; height: auto; max-height: 65dvh; object-fit: contain; border-radius: 10px; touch-action: pan-y pinch-zoom; }
+.photo-viewer figcaption { margin-top: 16px; font-size: 1rem; }
+.viewer-close,.viewer-controls button { display: grid; place-items: center; width: 48px; height: 48px; border: 1px solid #ffffff60; border-radius: 50%; color: white; background: #ffffff15; cursor: pointer; font-size: 1.5rem; }
+.viewer-close { position: absolute; top: 14px; right: 18px; }
+.viewer-controls { display: flex; gap: 28px; align-items: center; margin-top: 18px; }
+.viewer-controls span { min-width: 70px; text-align: center; }
+.viewer-hint { font-size: .875rem; color: #e4bdd5; margin: 12px 0 0; }
+@media(max-width:600px) { .music-heading { align-items: start; flex-direction: column; gap: 14px; } .birthday-music { margin-top: 30px; } }
