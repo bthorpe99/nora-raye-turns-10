@@ -7,6 +7,7 @@ const cake = document.querySelector('#cake');
 const toast = document.querySelector('#toast');
 
 function burst(amount = 80) {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   const colors = ['#ff4fa3', '#53d9e9', '#ffe85c', '#8e5cf6', '#ffffff'];
   for (let i = 0; i < amount; i += 1) {
     const piece = document.createElement('i');
@@ -28,6 +29,7 @@ enterButton.addEventListener('click', () => {
   welcome.classList.add('is-hidden');
   main.classList.add('is-visible');
   main.setAttribute('aria-hidden', 'false');
+  main.inert = false;
   document.body.style.overflow = '';
   burst(110);
   window.setTimeout(() => document.querySelector('.hero').focus?.(), 700);
@@ -48,6 +50,11 @@ wishButton.addEventListener('click', () => {
   wishButton.textContent = 'Wish made! Happy 10th, Nora ♡';
   wishButton.disabled = true;
   burst(150);
+  window.setTimeout(() => { document.querySelector('#birthdayFinale').appendChild(confetti); document.querySelector('#birthdayFinale').showModal(); document.body.style.overflow = 'hidden'; burst(100); }, 900);
 });
 
 document.body.style.overflow = 'hidden';
+
+const finale = document.querySelector('#birthdayFinale');
+document.querySelector('#closeFinale').addEventListener('click', () => finale.close());
+finale.addEventListener('close', () => { document.body.appendChild(confetti); document.body.style.overflow = ''; wishButton.disabled = false; wishButton.textContent = 'Celebrate again ✦'; wishButton.focus(); });

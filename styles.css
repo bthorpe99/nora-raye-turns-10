@@ -175,3 +175,48 @@ footer { display: flex; justify-content: space-between; gap: 18px; padding: 24px
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
 }
+/* Birthday backstage pass and wish finale */
+.welcome { background: radial-gradient(ellipse at 15% 10%, #642f83, transparent 55%), radial-gradient(ellipse at 95% 100%, #8e225a, transparent 50%), #160d25; overflow-y: auto; }
+.welcome__card { width: min(830px, 100%); padding: 20px 0; }
+.pass-label { color: #f7b9dc; font-size: .875rem; letter-spacing: .18em; font-weight: 700; margin: 0 0 22px; }
+.birthday-pass { display: grid; grid-template-columns: .85fr 1.15fr; border: 1px solid #ffffff70; border-radius: 22px; overflow: hidden; background: #fff9fb; color: #24132c; text-align: left; box-shadow: 0 25px 100px #0007; transform: rotate(-2deg); margin-bottom: 28px; }
+.pass-photo { position: relative; min-height: 360px; background: #53d9e9; }
+.pass-photo img { width: 100%; height: 100%; position: absolute; object-fit: cover; object-position: center 25%; }
+.pass-photo span { position: absolute; bottom: 20px; left: 18px; background: #ffe85c; padding: 10px 14px; color: #17121f; border-radius: 6px; font-size: .875rem; font-weight: 800; letter-spacing: .1em; transform: rotate(-5deg); }
+.pass-copy { padding: 32px; border-left: 2px dashed #dcbfd3; }
+.pass-copy .eyebrow { font-size: .875rem; letter-spacing: .1em; text-shadow: none; }
+.welcome__card h1 { font-size: clamp(4rem, 9vw, 6.5rem); line-height: .95; letter-spacing: -.055em; text-shadow: none; margin: 14px 0; }
+.welcome__card h1 em { color: #db176c; }
+.pass-subtitle { font-size: 1rem; line-height: 1.5; }
+.pass-details { display: flex; justify-content: space-between; gap: 16px; border-top: 1px solid #decbd7; margin-top: 22px; padding-top: 16px; font-size: .75rem; letter-spacing: .07em; }
+.pass-details strong { display: block; font-size: 1rem; margin-top: 5px; }
+.welcome .enter-button { background: #ffe85c; box-shadow: 5px 5px 0 #ff4fa3; border-color: #ffe85c; }
+.welcome-love { color: #eedcec; font-size: .875rem; margin: 20px 0 0; }
+.birthday-note__inner { padding: clamp(22px, 4vw, 48px); background: #fff9fb; color: #271735; border-radius: 4px 24px 24px 4px; box-shadow: -8px 0 0 #ffb9dc, 14px 18px 0 #30115e40; }
+.birthday-note__inner h2 em, .birthday-note__inner .signature span { color: #bd1460; }
+.birthday-finale { position: fixed; inset: 0; width: 100%; max-width: none; height: 100%; max-height: none; margin: 0; border: 0; padding: 28px; color: white; background: radial-gradient(ellipse at top, #74357e, transparent 65%), #1b102b; text-align: center; overflow-y: auto; }
+.birthday-finale[open] { display: grid; place-items: center; }
+.finale-inner { width: min(760px, 100%); }
+.finale-inner .eyebrow { color: #f6c4e1; font-size: .875rem; line-height: 1.6; }
+.finale-age { position: relative; display: inline-block; margin: 0; font: 800 clamp(6rem, 20vw, 10rem)/1 'Baloo 2'; color: #ffe85c; letter-spacing: -.08em; }
+.finale-age span { position: absolute; font-size: 3rem; right: -40px; top: 10px; color: #53d9e9; }
+.finale-inner h2 { margin: 8px 0 22px; font: 800 clamp(2.8rem, 8vw, 5rem)/1.05 'Baloo 2'; letter-spacing: -.04em; }
+.finale-inner > p:not(.eyebrow):not(.finale-age) { font-size: 1.05rem; line-height: 1.6; }
+.finale-signature { color: #ffc2df; margin: 24px 0 30px; }
+:focus-visible { outline: 3px solid #086b9d; outline-offset: 6px; }
+@media (max-width: 600px) {
+ .welcome { padding: 22px 18px; }
+ .welcome__card { padding: 8px 0; }
+ .pass-label { font-size: .75rem; line-height: 1.6; margin-bottom: 16px; }
+ .birthday-pass { grid-template-columns: .8fr 1.2fr; transform: rotate(-1deg); }
+ .pass-photo { min-height: 280px; }
+ .pass-copy { padding: 22px 16px; }
+ .pass-copy .eyebrow { font-size: .75rem; line-height: 1.5; }
+ .welcome__card h1 { font-size: clamp(2.9rem, 12vw, 4rem); line-height: 1; }
+ .pass-subtitle { font-size: .875rem; }
+ .pass-details { flex-wrap: wrap; font-size: .75rem; margin-top: 14px; padding-top: 12px; }
+ .pass-details strong { font-size: .875rem; }
+ .pass-photo span { font-size: .75rem; left: 8px; bottom: 18px; padding: 8px; }
+ .birthday-note__inner h2 { font-size: 3rem; line-height: 1; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; } }
