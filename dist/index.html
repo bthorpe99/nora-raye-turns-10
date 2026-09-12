@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ff4fa3">
+  <meta name="description" content="A special 10th birthday celebration for Nora Raye Thorpe.">
+  <title>Nora Raye Turns 10!</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23ff4fa3'/%3E%3Cpath d='M17 47V17h8l14 18V17h8v30h-8L25 29v18z' fill='white'/%3E%3Cpath d='M48 7l2.2 5.2L56 14l-5.8 1.8L48 21l-2.2-5.2L40 14l5.8-1.8z' fill='%23ffe85c'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="welcome" id="welcome">
+    <div class="welcome__sparkle sparkle-one">✦</div>
+    <div class="welcome__sparkle sparkle-two">✦</div>
+    <div class="welcome__sparkle sparkle-three">★</div>
+    <div class="welcome__card">
+      <p class="eyebrow">A birthday experience made just for</p>
+      <h1>Nora Raye</h1>
+      <div class="welcome__age"><span>1</span><span>0</span></div>
+      <p class="welcome__date">September 13, 2026</p>
+      <button class="enter-button" id="enterButton" type="button">
+        <span>Enter Nora’s Era</span>
+        <span aria-hidden="true">→</span>
+      </button>
+    </div>
+  </div>
+
+  <main id="mainContent" class="main-content" aria-hidden="true">
+    <nav class="nav" aria-label="Birthday page navigation">
+      <a class="nav__brand" href="#top" aria-label="Nora Raye birthday home">NR <span>✦</span></a>
+      <div class="nav__links">
+        <a href="#favorites">Her faves</a>
+        <a href="#moments">Her moments</a>
+      </div>
+      <span class="nav__badge">LEVEL 10</span>
+    </nav>
+
+    <section class="hero" id="top">
+      <div class="hero__copy">
+        <div class="hero__kicker"><span></span> Birthday girl energy</div>
+        <h2>Welcome to<br><em>Nora’s Era</em></h2>
+        <p class="hero__lead">Dancer. Cheerleader. Candy expert. Squishy collector. KATSEYE fan. And now… officially double digits.</p>
+        <a class="pill-link" href="#favorites">Start the birthday tour <span>↓</span></a>
+      </div>
+      <div class="hero__visual">
+        <div class="hero__halo" aria-hidden="true"></div>
+        <img src="assets/nora-cheer.jpeg" alt="Nora smiling in her cheer uniform" width="1170" height="1216">
+        <div class="sticker sticker--ten"><strong>10</strong><span>years<br>amazing</span></div>
+        <div class="sticker sticker--star">★<br><small>MAIN<br>CHARACTER</small></div>
+        <div class="hero__scribble" aria-hidden="true">Nora<br>Raye!</div>
+      </div>
+      <div class="ticker" aria-label="Nora's favorite things">
+        <div class="ticker__track">
+          <span>DANCE ✦ CHEER ✦ CANDY ✦ SQUISHIES ✦ KATSEYE ✦</span>
+          <span aria-hidden="true">DANCE ✦ CHEER ✦ CANDY ✦ SQUISHIES ✦ KATSEYE ✦</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="favorites section" id="favorites">
+      <div class="section-heading">
+        <p class="eyebrow">Nora’s official favorites</p>
+        <h2>Things that make<br>her world <em>pop</em></h2>
+        <p>Tap each card for a tiny birthday surprise.</p>
+      </div>
+      <div class="fave-grid">
+        <button class="fave-card fave-card--music" type="button" data-message="Pop-star energy activated! 🎤">
+          <span class="fave-card__number">01</span>
+          <img src="assets/katseye-2.jpeg" alt="KATSEYE group" width="399" height="501">
+          <span class="fave-card__label">KATSEYE</span>
+          <span class="fave-card__hint">tap me ↗</span>
+        </button>
+        <button class="fave-card fave-card--squishy" type="button" data-message="Maximum squishiness unlocked! 💚">
+          <span class="fave-card__number">02</span>
+          <img src="assets/squishy-green.jpeg" alt="A green squishy toy" width="447" height="447">
+          <span class="fave-card__label">SQUISHIES</span>
+          <span class="fave-card__hint">tap me ↗</span>
+        </button>
+        <button class="fave-card fave-card--candy" type="button" data-message="Sweetest birthday ever! 🍭">
+          <span class="fave-card__number">03</span>
+          <span class="candy-art" aria-hidden="true">🍬<b>🍭</b><i>🍫</i></span>
+          <span class="fave-card__label">CANDY</span>
+          <span class="fave-card__hint">tap me ↗</span>
+        </button>
+        <button class="fave-card fave-card--dance" type="button" data-message="The stage is yours, birthday girl! ✨">
+          <span class="fave-card__number">04</span>
+          <img src="assets/nora-dance-portrait.jpeg" alt="Nora posing in her turquoise dance costume" width="1170" height="1536">
+          <span class="fave-card__label">DANCE + CHEER</span>
+          <span class="fave-card__hint">tap me ↗</span>
+        </button>
+      </div>
+      <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    </section>
+
+    <section class="fan-section section">
+      <div class="fan-section__header">
+        <div>
+          <p class="eyebrow">On Nora’s playlist</p>
+          <h2>KATSEYE<br><em>fan zone</em></h2>
+        </div>
+        <p>Six stars meet one birthday superstar.</p>
+      </div>
+      <div class="fan-collage">
+        <figure class="fan-shot fan-shot--one"><img src="assets/katseye-1.jpeg" alt="KATSEYE group in denim outfits" width="588" height="387"></figure>
+        <figure class="fan-shot fan-shot--two"><img src="assets/katseye-3.webp" alt="KATSEYE group in colorful outfits" width="900" height="863"></figure>
+        <div class="fan-note">NORA’S<br><strong>TOP PICK</strong><br>★★★★★</div>
+      </div>
+    </section>
+
+    <section class="moments section" id="moments">
+      <div class="section-heading section-heading--center">
+        <p class="eyebrow">Born to shine</p>
+        <h2>Big moves.<br><em>Bright moments.</em></h2>
+      </div>
+      <div class="photo-strip">
+        <figure class="photo-card photo-card--left">
+          <img src="assets/nora-dance-celebration.jpeg" alt="Nora smiling after a dance celebration" width="1170" height="1549">
+          <figcaption>Sweetest star ★</figcaption>
+        </figure>
+        <figure class="photo-card photo-card--middle">
+          <img src="assets/nora-dance-portrait.jpeg" alt="Nora in her sparkling dance costume" width="1170" height="1536">
+          <figcaption>Center stage energy</figcaption>
+        </figure>
+        <figure class="photo-card photo-card--right">
+          <img src="assets/nora-dance-team.jpeg" alt="Nora posing with her dance teammates" width="1170" height="1307">
+          <figcaption>Team sparkle ✦</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="squishy-section section">
+      <div class="squishy-section__copy">
+        <p class="eyebrow">Soft spot unlocked</p>
+        <h2>Squish.<br>Smile.<br><em>Repeat.</em></h2>
+        <p>Because every great day is better with something delightfully squishy.</p>
+      </div>
+      <div class="squishy-stack">
+        <img class="squish squish--one" src="assets/squishy-pineapple.jpeg" alt="Pineapple squishy toy" width="201" height="251">
+        <img class="squish squish--two" src="assets/squishy-potatoes.jpeg" alt="Three funny potato squishy toys" width="229" height="220">
+        <img class="squish squish--three" src="assets/squishy-green.jpeg" alt="Green squishy toy" width="447" height="447">
+      </div>
+    </section>
+
+    <section class="birthday-note section">
+      <div class="birthday-note__inner">
+        <p class="eyebrow">A note for the birthday girl</p>
+        <h2>Nora, keep dancing,<br>dreaming & being <em>you.</em></h2>
+        <p>You bring so much joy, talent, and sparkle everywhere you go. I hope your 10th birthday is filled with your favorite music, the best candy, endless laughs, and every squishy you can hold.</p>
+        <p class="signature">Happy Birthday!<br><span>Love, Uncle Brandon ♡</span></p>
+        <button class="wish-button" id="wishButton" type="button">Make a birthday wish ✦</button>
+      </div>
+      <div class="cake" id="cake" aria-label="Birthday cake with ten candles">
+        <div class="candles" aria-hidden="true">
+          <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        </div>
+        <div class="cake__top">NORA</div>
+        <div class="cake__base">10</div>
+        <p>Tap the button to blow out the candles!</p>
+      </div>
+    </section>
+
+    <footer>
+      <p>NORA RAYE THORPE <span>✦</span> TEN YEARS AMAZING</p>
+      <p>SEPTEMBER 13, 2016 — SEPTEMBER 13, 2026</p>
+    </footer>
+  </main>
+
+  <div class="confetti" id="confetti" aria-hidden="true"></div>
+  <script src="script.js"></script>
+</body>
+</html>
