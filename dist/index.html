@@ -19,18 +19,12 @@
     <div class="welcome__sparkle sparkle-two">✦</div>
     <div class="welcome__sparkle sparkle-three">★</div>
     <div class="welcome__card">
-      <p class="eyebrow">A birthday experience made just for</p>
-      <h1>Nora Raye</h1>
-      <div class="welcome__age"><span>1</span><span>0</span></div>
-      <p class="welcome__date">September 13, 2026</p>
-      <button class="enter-button" id="enterButton" type="button">
-        <span>Enter Nora’s Era</span>
-        <span aria-hidden="true">→</span>
-      </button>
-    </div>
-  </div>
+<p class="pass-label">THE BIRTHDAY TOUR · SEPTEMBER 13, 2026</p>
+<div class="birthday-pass"><div class="pass-photo"><img src="assets/nora-dance-portrait.jpeg" alt="Nora in her sparkling turquoise dance costume"><span>ALL ACCESS ✦</span></div>
+<div class="pass-copy"><p class="eyebrow">A new era starts here</p><h1>Nora<br><em>Raye.</em></h1><p class="pass-subtitle">Ten years of being one of a kind.</p><div class="pass-details"><span>BIRTHDAY GIRL<strong>NORA RAYE</strong></span><span>LEVEL<strong>10 ✦</strong></span></div></div></div>
+<button class="enter-button" id="enterButton" type="button"><span>Let’s celebrate</span><span aria-hidden="true">✦</span></button><p class="welcome-love">Made with love, just for you. — Uncle B.T.</p></div></div>
 
-  <main id="mainContent" class="main-content" aria-hidden="true">
+  <main id="mainContent" class="main-content" aria-hidden="true" inert>
     <nav class="nav" aria-label="Birthday page navigation">
       <a class="nav__brand" href="#top" aria-label="Nora Raye birthday home">NR <span>✦</span></a>
       <div class="nav__links">
@@ -41,7 +35,7 @@
       <span class="nav__badge">LEVEL 10</span>
     </nav>
 
-    <section class="hero" id="top">
+    <section class="hero" id="top" tabindex="-1">
       <div class="hero__copy">
         <div class="hero__kicker"><span></span> Birthday girl energy</div>
         <h2>Welcome to<br><em>Nora’s Era</em></h2>
@@ -233,6 +227,7 @@
     </footer>
   </main>
 
+  <dialog class="birthday-finale" id="birthdayFinale" aria-labelledby="finaleTitle"><div class="finale-inner"><p class="eyebrow">Your next chapter is going to shine</p><p class="finale-age" aria-hidden="true">10<span>✦</span></p><h2 id="finaleTitle">Happy Birthday,<br><em>Nora Raye!</em></h2><p>Keep dancing. Keep dreaming. Keep being you.</p><p class="finale-signature">Love always, Uncle B.T. ♡</p><button class="enter-button" id="closeFinale" type="button">Back to your birthday <span aria-hidden="true">♡</span></button></div></dialog>
   <div class="confetti" id="confetti" aria-hidden="true"></div>
   <script src="script.js"></script>
 </body>
