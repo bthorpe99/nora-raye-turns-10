@@ -32,7 +32,7 @@
         <a href="#moments">Her moments</a>
         <a href="#story">Her story</a>
       </div>
-      <span class="nav__badge">LEVEL 10</span>
+      <a class="nav__badge" href="#birthdayMusic">♫ Music</a>
     </nav>
 
     <section class="hero" id="top" tabindex="-1">
@@ -74,7 +74,7 @@
           <span class="fave-card__number">02</span>
           <img src="assets/squishy-green.jpeg" alt="A green squishy toy" width="447" height="447">
           <span class="fave-card__label">SQUISHIES</span>
-          <span class="fave-card__hint">tap me ↗</span>
+          <span class="fave-card__hint">hold to squish ♡</span>
         </button>
         <button class="fave-card fave-card--candy" type="button" data-message="Sweetest birthday ever! 🍭">
           <span class="fave-card__number">03</span>
@@ -100,7 +100,7 @@
         </div>
         <p>Six stars meet one birthday superstar.</p>
       </div>
-      <div class="fan-collage">
+      <div class="birthday-music" id="birthdayMusic"><div class="music-heading"><div><p class="eyebrow">The birthday soundtrack</p><h3>A little KATSEYE.<br>A lot of birthday energy.</h3></div><a href="https://open.spotify.com/artist/3c0gDdb9lhnHGFtP4prQpn" target="_blank" rel="noopener noreferrer">Open in Spotify ↗</a></div><iframe title="KATSEYE songs on Spotify" src="https://open.spotify.com/embed/artist/3c0gDdb9lhnHGFtP4prQpn?utm_source=generator&theme=0" width="100%" height="352" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin"></iframe><p class="music-note">Pick a song and press play. Spotify may play previews or ask you to sign in.</p></div><div class="fan-collage">
         <figure class="fan-shot fan-shot--one"><img src="assets/katseye-1.jpeg" alt="KATSEYE group in denim outfits" width="588" height="387"></figure>
         <figure class="fan-shot fan-shot--two"><img src="assets/katseye-3.webp" alt="KATSEYE group in colorful outfits" width="900" height="863"></figure>
         <div class="fan-note">NORA’S<br><strong>TOP PICK</strong><br>★★★★★</div>
@@ -112,7 +112,7 @@
         <p class="eyebrow">Born to shine</p>
         <h2>Big moves.<br><em>Bright moments.</em></h2>
       </div>
-      <div class="photo-strip">
+      <p class="gallery-hint">Tap a photo to see it full-screen.</p><div class="photo-strip">
         <figure class="photo-card photo-card--left">
           <img src="assets/nora-dance-celebration.jpeg" alt="Nora smiling after a dance celebration" width="1170" height="1549">
           <figcaption>Sweetest star ★</figcaption>
@@ -227,6 +227,7 @@
     </footer>
   </main>
 
+  <dialog class="photo-viewer" id="photoViewer" aria-label="Nora’s photo gallery"><button class="viewer-close" id="closeViewer" type="button" aria-label="Close photo gallery">✕</button><figure><img id="viewerImage" alt=""><figcaption id="viewerCaption" aria-live="polite"></figcaption></figure><div class="viewer-controls"><button id="prevPhoto" type="button" aria-label="Previous photo">←</button><span id="photoCount" aria-live="polite"></span><button id="nextPhoto" type="button" aria-label="Next photo">→</button></div><p class="viewer-hint">Swipe or use the arrows</p></dialog>
   <dialog class="birthday-finale" id="birthdayFinale" aria-labelledby="finaleTitle"><div class="finale-inner"><p class="eyebrow">Your next chapter is going to shine</p><p class="finale-age" aria-hidden="true">10<span>✦</span></p><h2 id="finaleTitle">Happy Birthday,<br><em>Nora Raye!</em></h2><p>Keep dancing. Keep dreaming. Keep being you.</p><p class="finale-signature">Love always, Uncle B.T. ♡</p><button class="enter-button" id="closeFinale" type="button">Back to your birthday <span aria-hidden="true">♡</span></button></div></dialog>
   <div class="confetti" id="confetti" aria-hidden="true"></div>
   <script src="script.js"></script>
