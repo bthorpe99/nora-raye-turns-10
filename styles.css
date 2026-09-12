@@ -1,0 +1,154 @@
+:root {
+  --pink: #ff4fa3;
+  --hot-pink: #ed1978;
+  --aqua: #53d9e9;
+  --blue: #086b9d;
+  --yellow: #ffe85c;
+  --purple: #8e5cf6;
+  --ink: #17121f;
+  --paper: #fff9fb;
+  --white: #fff;
+  --radius: 28px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "DM Sans", sans-serif;
+  overflow-x: hidden;
+}
+button, a { font: inherit; }
+button { -webkit-tap-highlight-color: transparent; }
+img { display: block; max-width: 100%; }
+.grain {
+  position: fixed; inset: 0; pointer-events: none; z-index: 100;
+  opacity: .08; mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+}
+.eyebrow { margin: 0 0 14px; font-size: .78rem; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; }
+em { color: var(--pink); font-style: normal; }
+
+.welcome {
+  position: fixed; inset: 0; z-index: 90; display: grid; place-items: center; padding: 22px;
+  overflow: hidden; background: radial-gradient(circle at 70% 25%, #ffdcf0 0, transparent 32%), linear-gradient(135deg, #55dbea, #8b6df9 52%, #ff4fa3);
+  transition: opacity .7s ease, visibility .7s ease;
+}
+.welcome::before, .welcome::after { content: ""; position: absolute; border: 2px solid rgba(255,255,255,.45); border-radius: 50%; }
+.welcome::before { width: 58vw; height: 58vw; left: -22vw; bottom: -30vw; }
+.welcome::after { width: 40vw; height: 40vw; right: -16vw; top: -18vw; }
+.welcome.is-hidden { opacity: 0; visibility: hidden; }
+.welcome__card { position: relative; z-index: 2; width: min(620px, 100%); text-align: center; color: white; }
+.welcome__card h1 { margin: -8px 0 0; font: 800 clamp(4.6rem, 16vw, 9.5rem)/.76 "Baloo 2", sans-serif; letter-spacing: -.07em; text-shadow: 0 8px 0 rgba(56,24,112,.16); }
+.welcome__card .eyebrow { text-shadow: 0 1px 12px rgba(0,0,0,.18); }
+.welcome__age { display: flex; justify-content: center; gap: 8px; margin: 22px 0 6px; }
+.welcome__age span { display: grid; place-items: center; width: 82px; height: 94px; color: var(--ink); background: var(--yellow); border: 3px solid var(--ink); border-radius: 22px; box-shadow: 8px 8px 0 var(--ink); font: 800 4.7rem/1 "Baloo 2"; transform: rotate(-5deg); }
+.welcome__age span + span { background: white; transform: rotate(6deg); }
+.welcome__date { margin: 24px 0; font-weight: 700; letter-spacing: .12em; }
+.enter-button, .wish-button { border: 0; cursor: pointer; font-weight: 800; }
+.enter-button { display: inline-flex; align-items: center; gap: 36px; padding: 17px 22px 17px 28px; color: var(--ink); background: white; border: 3px solid var(--ink); border-radius: 999px; box-shadow: 7px 7px 0 var(--ink); transition: transform .2s, box-shadow .2s; }
+.enter-button:hover, .enter-button:focus-visible { transform: translate(4px, 4px); box-shadow: 3px 3px 0 var(--ink); }
+.welcome__sparkle { position: absolute; color: white; font-size: clamp(2.8rem, 8vw, 6rem); animation: twinkle 2.2s ease-in-out infinite; }
+.sparkle-one { top: 14%; left: 12%; }.sparkle-two { right: 12%; bottom: 14%; animation-delay: -.8s; }.sparkle-three { right: 18%; top: 18%; color: var(--yellow); animation-delay: -1.3s; }
+@keyframes twinkle { 50% { transform: rotate(20deg) scale(.72); opacity: .55; } }
+
+.main-content { opacity: 0; transform: scale(.985); transition: opacity .8s .15s, transform .8s .15s; }
+.main-content.is-visible { opacity: 1; transform: none; }
+.nav { position: absolute; z-index: 15; top: 0; left: 0; right: 0; display: flex; align-items: center; justify-content: space-between; padding: 24px clamp(22px, 5vw, 72px); }
+.nav a { color: var(--ink); text-decoration: none; font-weight: 800; }
+.nav__brand { font: 800 1.5rem "Baloo 2"; }.nav__brand span { color: var(--pink); }
+.nav__links { display: flex; gap: 28px; font-size: .88rem; }.nav__links a:hover { color: var(--pink); }
+.nav__badge { padding: 9px 14px; border: 2px solid var(--ink); border-radius: 999px; background: var(--yellow); font-size: .72rem; font-weight: 900; letter-spacing: .08em; }
+
+.hero { position: relative; min-height: 100vh; display: grid; grid-template-columns: .9fr 1.1fr; align-items: center; padding: 110px clamp(22px, 6vw, 90px) 92px; background: radial-gradient(circle at 18% 68%, rgba(83,217,233,.32), transparent 29%), radial-gradient(circle at 70% 18%, rgba(255,79,163,.19), transparent 35%), #fff9fb; overflow: hidden; }
+.hero__copy { position: relative; z-index: 3; padding-bottom: 30px; }
+.hero__kicker { display: flex; align-items: center; gap: 10px; margin-bottom: 22px; font-size: .82rem; font-weight: 800; text-transform: uppercase; letter-spacing: .14em; }
+.hero__kicker span { width: 30px; height: 4px; background: var(--pink); border-radius: 2px; }
+.hero h2, .section h2 { margin: 0; font: 800 clamp(3.8rem, 8.5vw, 8.2rem)/.78 "Baloo 2"; letter-spacing: -.065em; }
+.hero__lead { max-width: 500px; margin: 30px 0; font-size: clamp(1.08rem, 1.7vw, 1.3rem); line-height: 1.55; font-weight: 500; }
+.pill-link { display: inline-flex; align-items: center; gap: 18px; color: white; background: var(--ink); padding: 14px 20px; border-radius: 999px; text-decoration: none; font-weight: 700; }
+.pill-link span { display: grid; place-items: center; width: 30px; height: 30px; color: var(--ink); background: var(--yellow); border-radius: 50%; }
+.hero__visual { position: relative; z-index: 2; width: min(600px, 100%); justify-self: end; padding: 36px; }
+.hero__visual > img { position: relative; z-index: 2; width: 100%; aspect-ratio: .9; object-fit: cover; object-position: center 25%; border: 4px solid var(--ink); border-radius: 50% 50% 42% 45%; filter: saturate(1.05); box-shadow: 16px 18px 0 var(--aqua); }
+.hero__halo { position: absolute; inset: 5% -8% 3% 9%; background: var(--pink); border-radius: 48% 52% 43% 57%; transform: rotate(-8deg); opacity: .9; }
+.sticker { position: absolute; z-index: 5; display: grid; place-items: center; text-align: center; border: 3px solid var(--ink); box-shadow: 5px 5px 0 var(--ink); }
+.sticker--ten { left: -8px; top: 7%; width: 116px; height: 116px; background: var(--yellow); border-radius: 50%; transform: rotate(-10deg); }
+.sticker--ten strong { font: 800 3.7rem/.55 "Baloo 2"; }.sticker--ten span { font-size: .65rem; font-weight: 900; line-height: 1; text-transform: uppercase; }
+.sticker--star { right: -6px; bottom: 14%; width: 112px; height: 112px; color: white; background: var(--purple); border-radius: 24px; transform: rotate(9deg); font-size: 2rem; line-height: .72; }.sticker--star small { font-size: .62rem; font-weight: 900; }
+.hero__scribble { position: absolute; z-index: 4; right: -22px; top: 5%; color: white; font: 800 1.45rem/1 "Baloo 2"; transform: rotate(9deg); text-shadow: 2px 2px 0 var(--ink); }
+.ticker { position: absolute; bottom: 0; left: 0; right: 0; background: var(--ink); color: white; padding: 15px 0; overflow: hidden; transform: rotate(-1deg) scale(1.02); }
+.ticker__track { display: flex; width: max-content; animation: ticker 20s linear infinite; }
+.ticker span { padding-right: 28px; font: 800 1rem "Baloo 2"; letter-spacing: .1em; white-space: nowrap; }
+@keyframes ticker { to { transform: translateX(-50%); } }
+
+.section { padding: clamp(82px, 12vw, 150px) clamp(22px, 6vw, 90px); }
+.favorites { position: relative; background: var(--aqua); }
+.section-heading { display: grid; grid-template-columns: 1fr 1fr; align-items: end; margin-bottom: 60px; }
+.section-heading .eyebrow { grid-column: 1 / -1; }.section-heading h2 { font-size: clamp(3.4rem, 7vw, 6.8rem); }.section-heading > p:last-child { max-width: 300px; justify-self: end; font-size: 1rem; line-height: 1.5; font-weight: 600; }
+.fave-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.fave-card { position: relative; min-height: 420px; overflow: hidden; padding: 0; border: 3px solid var(--ink); border-radius: var(--radius); background: white; cursor: pointer; box-shadow: 7px 7px 0 var(--ink); transition: transform .25s, box-shadow .25s; }
+.fave-card:nth-child(even) { transform: translateY(24px); }.fave-card:hover, .fave-card:focus-visible { transform: translateY(-8px) rotate(-1deg); box-shadow: 13px 14px 0 var(--ink); }.fave-card:nth-child(even):hover { transform: translateY(14px) rotate(1deg); }
+.fave-card img { width: 100%; height: 100%; object-fit: cover; }
+.fave-card--music img { object-position: center; }.fave-card--dance img { object-position: center top; }
+.fave-card__number { position: absolute; z-index: 2; top: 14px; left: 14px; display: grid; place-items: center; width: 42px; height: 42px; border: 2px solid var(--ink); border-radius: 50%; background: var(--yellow); font-weight: 900; }
+.fave-card__label { position: absolute; z-index: 2; left: 14px; right: 14px; bottom: 38px; padding: 12px 8px; border: 2px solid var(--ink); border-radius: 12px; color: white; background: var(--pink); font: 800 clamp(1rem, 2vw, 1.35rem) "Baloo 2"; transform: rotate(-2deg); }
+.fave-card__hint { position: absolute; z-index: 2; left: 0; right: 0; bottom: 10px; font-size: .68rem; font-weight: 800; text-transform: uppercase; letter-spacing: .12em; }
+.fave-card--squishy { background: #dfffa4; }.fave-card--squishy img { object-fit: contain; padding: 34px; }.fave-card--candy { background: var(--yellow); }.fave-card--candy .fave-card__label { background: var(--purple); }
+.candy-art { display: block; margin-top: 100px; font-size: 5.5rem; transform: rotate(-8deg); }.candy-art b, .candy-art i { position: absolute; font-style: normal; }.candy-art b { right: 22px; top: 135px; transform: rotate(20deg); }.candy-art i { left: 42px; bottom: 90px; transform: rotate(-18deg); }
+.toast { position: fixed; z-index: 80; left: 50%; bottom: 28px; transform: translate(-50%, 120px); padding: 14px 20px; color: white; background: var(--ink); border: 2px solid white; border-radius: 999px; box-shadow: 5px 5px 0 var(--pink); font-weight: 700; opacity: 0; transition: .35s; }.toast.show { transform: translate(-50%, 0); opacity: 1; }
+
+.fan-section { background: var(--ink); color: white; overflow: hidden; }
+.fan-section__header { display: grid; grid-template-columns: 1fr 1fr; align-items: end; gap: 30px; }.fan-section h2 { font-size: clamp(4rem, 8vw, 8rem); }.fan-section__header > p { max-width: 300px; justify-self: end; font-size: 1.2rem; font-weight: 600; }
+.fan-collage { position: relative; margin: 70px auto 0; width: min(1050px, 100%); min-height: 600px; }
+.fan-shot { position: absolute; margin: 0; padding: 12px 12px 42px; background: white; border: 3px solid white; box-shadow: 14px 16px 0 var(--pink); }.fan-shot img { width: 100%; height: 100%; object-fit: cover; }
+.fan-shot--one { z-index: 2; left: 0; top: 70px; width: 58%; height: 430px; transform: rotate(-5deg); }.fan-shot--two { z-index: 1; right: 0; top: 0; width: 52%; height: 500px; transform: rotate(6deg); }
+.fan-note { position: absolute; z-index: 4; right: 2%; bottom: 10px; width: 170px; height: 170px; display: grid; place-content: center; text-align: center; color: var(--ink); background: var(--yellow); border: 3px solid var(--ink); border-radius: 50%; box-shadow: 7px 7px 0 var(--pink); font: 800 .76rem/1.3 "Baloo 2"; transform: rotate(-7deg); }.fan-note strong { font-size: 1.25rem; }
+
+.moments { background: var(--pink); overflow: hidden; }.moments .section-heading { color: white; }.moments .section-heading em { color: var(--yellow); }.section-heading--center { display: block; text-align: center; }
+.photo-strip { display: flex; align-items: center; justify-content: center; margin-top: 50px; }
+.photo-card { position: relative; width: min(34vw, 390px); margin: 0 -24px; padding: 12px 12px 48px; background: white; border: 3px solid var(--ink); box-shadow: 10px 12px 0 var(--ink); }.photo-card img { width: 100%; height: 480px; object-fit: cover; object-position: center top; }.photo-card figcaption { padding-top: 13px; text-align: center; font: 800 1.1rem "Baloo 2"; }
+.photo-card--left { transform: rotate(-8deg); }.photo-card--middle { z-index: 2; transform: translateY(-20px) rotate(2deg); }.photo-card--right { transform: rotate(8deg); }.photo-card--right img { object-position: 20% top; }
+
+.squishy-section { display: grid; grid-template-columns: .8fr 1.2fr; align-items: center; min-height: 730px; background: var(--yellow); overflow: hidden; }
+.squishy-section h2 { font-size: clamp(4rem, 8vw, 8rem); }.squishy-section__copy > p:last-child { max-width: 420px; font-size: 1.15rem; line-height: 1.6; font-weight: 600; }
+.squishy-stack { position: relative; min-height: 520px; }.squish { position: absolute; border: 3px solid var(--ink); border-radius: 38%; background: white; box-shadow: 12px 14px 0 var(--ink); animation: float 4s ease-in-out infinite; }
+.squish--one { left: 0; top: 40px; width: 42%; transform: rotate(-9deg); }.squish--two { right: 2%; top: 10px; width: 48%; animation-delay: -1.3s; }.squish--three { left: 25%; bottom: 0; width: 48%; animation-delay: -2.4s; }
+@keyframes float { 50% { translate: 0 -12px; } }
+
+.birthday-note { display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: 60px; color: white; background: linear-gradient(145deg, #8e5cf6, #5c36c6); }
+.birthday-note h2 { font-size: clamp(3.5rem, 7vw, 6.7rem); }.birthday-note h2 em { color: var(--yellow); }.birthday-note__inner > p:not(.eyebrow):not(.signature) { max-width: 680px; font-size: 1.1rem; line-height: 1.72; }.signature { margin: 30px 0; font: 800 2.15rem/1.05 "Baloo 2"; }.signature span { font-size: 1.15rem; color: var(--yellow); }
+.wish-button { padding: 15px 22px; color: var(--ink); background: var(--yellow); border: 3px solid var(--ink); border-radius: 999px; box-shadow: 6px 6px 0 var(--ink); }
+.cake { position: relative; display: grid; justify-items: center; align-content: center; min-height: 510px; }.cake__top, .cake__base { display: grid; place-items: center; border: 4px solid var(--ink); box-shadow: 8px 8px 0 rgba(23,18,31,.45); font: 800 2rem "Baloo 2"; }.cake__top { width: 68%; height: 90px; color: var(--ink); background: var(--aqua); border-radius: 24px 24px 10px 10px; }.cake__base { width: 88%; height: 150px; color: white; background: var(--pink); border-radius: 14px 14px 30px 30px; font-size: 5rem; }.cake p { font-size: .82rem; font-weight: 700; text-align: center; }
+.candles { display: flex; align-items: end; justify-content: center; gap: 10px; width: 70%; }.candles i { position: relative; display: block; width: 9px; height: 48px; background: repeating-linear-gradient(45deg, white 0 5px, var(--pink) 5px 10px); border: 2px solid var(--ink); }.candles i::before { content: ""; position: absolute; left: 50%; bottom: calc(100% + 4px); width: 12px; height: 18px; background: var(--yellow); border-radius: 70% 30% 60% 40%; transform: translateX(-50%) rotate(8deg); box-shadow: 0 0 15px #ffef72; transition: opacity .3s, transform .3s; }.cake.blown .candles i::before { opacity: 0; transform: translateX(-50%) translateY(-10px) scale(.2); }
+
+footer { display: flex; justify-content: space-between; gap: 18px; padding: 24px clamp(22px, 6vw, 90px); color: white; background: var(--ink); font-size: .72rem; font-weight: 800; letter-spacing: .12em; } footer span { color: var(--yellow); }
+.confetti { position: fixed; z-index: 110; inset: 0; pointer-events: none; overflow: hidden; }.confetti-piece { position: absolute; top: -20px; width: 11px; height: 20px; animation: fall var(--duration) ease-in forwards; }.confetti-piece.circle { border-radius: 50%; }.confetti-piece.star { width: auto; height: auto; font-size: 18px; background: transparent !important; }
+@keyframes fall { to { transform: translate3d(var(--drift), 110vh, 0) rotate(780deg); opacity: .9; } }
+
+@media (max-width: 900px) {
+  .nav__links { display: none; }
+  .hero { grid-template-columns: 1fr; padding-top: 130px; text-align: center; }
+  .hero__kicker { justify-content: center; }.hero__lead { margin-inline: auto; }.hero__visual { justify-self: center; width: min(550px, 92%); margin-top: 35px; }
+  .section-heading, .fan-section__header { grid-template-columns: 1fr; }.section-heading > p:last-child, .fan-section__header > p { justify-self: start; }
+  .fave-grid { grid-template-columns: 1fr 1fr; }.fave-card:nth-child(even) { transform: none; }
+  .squishy-section, .birthday-note { grid-template-columns: 1fr; }.squishy-section__copy { text-align: center; }.squishy-section__copy > p:last-child { margin-inline: auto; }
+}
+
+@media (max-width: 600px) {
+  .nav { padding: 18px; }.nav__badge { font-size: .62rem; }
+  .welcome__card h1 { font-size: 4.6rem; }.welcome__age span { width: 68px; height: 80px; font-size: 4rem; }
+  .hero { min-height: auto; padding: 112px 18px 88px; }.hero h2 { font-size: 4rem; }.hero__visual { padding: 14px; }.hero__visual > img { box-shadow: 9px 10px 0 var(--aqua); }.sticker--ten { width: 88px; height: 88px; }.sticker--ten strong { font-size: 2.8rem; }.sticker--star { width: 86px; height: 86px; right: -2px; }
+  .section { padding: 82px 18px; }.section-heading { margin-bottom: 38px; }.section-heading h2, .fan-section h2, .moments h2, .squishy-section h2, .birthday-note h2 { font-size: 3.75rem; }
+  .fave-grid { grid-template-columns: 1fr; gap: 22px; }.fave-card { min-height: 430px; }.fave-card:hover, .fave-card:focus-visible, .fave-card:nth-child(even):hover { transform: translateY(-5px); }
+  .fan-collage { min-height: 430px; }.fan-shot--one { width: 74%; height: 280px; }.fan-shot--two { width: 63%; height: 310px; }.fan-note { width: 120px; height: 120px; bottom: 0; font-size: .58rem; }.fan-note strong { font-size: .9rem; }
+  .photo-strip { flex-direction: column; gap: 20px; }.photo-card { width: min(86vw, 390px); margin: 0; }.photo-card--left { transform: rotate(-4deg); }.photo-card--middle { transform: rotate(3deg); }.photo-card--right { transform: rotate(-2deg); }.photo-card img { height: 430px; }
+  .squishy-section { min-height: auto; }.squishy-stack { min-height: 430px; }.squish--one { width: 48%; }.squish--two { width: 54%; }.squish--three { width: 52%; }
+  .birthday-note { gap: 20px; }.cake { min-height: 410px; }.candles { gap: 6px; }.cake__top { width: 74%; }.cake__base { width: 96%; }
+  footer { flex-direction: column; text-align: center; line-height: 1.6; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+}
